@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aneesh15here.github.io/toowoomba-crc/sitemap.xml
