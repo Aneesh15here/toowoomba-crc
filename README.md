@@ -17,7 +17,7 @@ Content is taken from the congregation’s public website, [toowoombacrc.com](ht
 
 ## GitHub Pages
 
-The workflow in `.github/workflows/pages.yml` deploys the repository root when changes land on `main`. In the repository settings, set Pages to deploy with GitHub Actions. `.nojekyll` keeps Jekyll from rewriting the site.
+GitHub Pages deploys from the `main` branch root. `.nojekyll` keeps Jekyll from rewriting the site.
 
 ## TODO
 
