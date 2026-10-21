@@ -1,19 +1,31 @@
 :root {
-  --bg: #f3eee6;
-  --bg-deep: #e7dfd2;
-  --surface: #fffdf9;
-  --ink: #1c1916;
-  --muted: #3f3a34;
-  --line: #ddcfbc;
-  --forest: #17362d;
-  --forest-mid: #245246;
-  --clay: #6d2e23;
-  --gold: #8a5a22;
-  --todo-bg: #fff6d6;
-  --todo-ink: #3a2c08;
-  --todo-line: #8a6412;
+  --bg: #e9eef5;
+  --bg-deep: #d9e3ef;
+  --bg-glow: #dfe8f4;
+  --surface: #f7f9fc;
+  --surface-muted: #e3ebf4;
+  --ink: #1c2736;
+  --muted: #3d4d63;
+  --line: #c5d1e0;
+  --forest: #1a3358;
+  --forest-mid: #2c4a72;
+  --clay: #1a4a86;
+  --clay-deep: #123666;
+  --gold: #1a5278;
+  --todo-bg: #e4eef8;
+  --todo-ink: #1c2736;
+  --todo-line: #6a86a6;
   --focus: #0b4f8a;
-  --shadow: 0 16px 40px rgba(48, 32, 16, 0.08);
+  --on-ink: #ffffff;
+  --on-navy: #f4f7fb;
+  --on-navy-soft: #d5e0ee;
+  --on-navy-accent: #c9dff5;
+  --on-blue: #f7f9fc;
+  --mark-accent: #c5d8ef;
+  --on-navy-wash: rgba(244, 247, 251, 0.1);
+  --on-navy-line: rgba(244, 247, 251, 0.22);
+  --header-bg: rgba(233, 238, 245, 0.92);
+  --shadow: 0 16px 40px rgba(22, 40, 72, 0.08);
   --radius: 1.25rem;
   --max: 72rem;
   --header: 4.5rem;
@@ -33,7 +45,7 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(1200px 500px at 100% -10%, #efe2cf 0%, transparent 55%),
+    radial-gradient(1200px 500px at 100% -10%, var(--bg-glow) 0%, transparent 55%),
     var(--bg);
   color: var(--ink);
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -61,6 +73,7 @@ h4 {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  color: var(--forest);
 }
 
 h1 {
@@ -107,7 +120,7 @@ a:hover {
   z-index: 20;
   transform: translateY(-150%);
   background: var(--ink);
-  color: #fff;
+  color: var(--on-ink);
   padding: 0.6rem 0.9rem;
   border-radius: 0.5rem;
 }
@@ -125,7 +138,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(243, 238, 230, 0.92);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
@@ -158,7 +171,11 @@ a:hover {
   place-items: center;
   border-radius: 0.8rem;
   background: var(--forest);
-  color: #f7f1e6;
+  color: var(--on-navy);
+}
+
+.brand-mark svg path:last-child {
+  stroke: var(--mark-accent);
 }
 
 .brand-kicker,
@@ -202,7 +219,7 @@ a:hover {
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   background: var(--forest);
-  color: #f7f1e6;
+  color: var(--on-navy);
 }
 
 .hero {
@@ -250,12 +267,12 @@ a:hover {
 
 .button-primary {
   background: var(--clay);
-  color: #fffaf6;
+  color: var(--on-blue);
 }
 
 .button-primary:hover {
-  background: #542318;
-  color: #fff;
+  background: var(--clay-deep);
+  color: var(--on-blue);
 }
 
 .button-secondary {
@@ -266,12 +283,12 @@ a:hover {
 
 .button-secondary:hover {
   background: var(--forest);
-  color: #f7f1e6;
+  color: var(--on-navy);
 }
 
 .service-panel {
   background: var(--forest);
-  color: #f6f1e8;
+  color: var(--on-navy);
   border-radius: var(--radius);
   padding: 1.35rem 1.25rem 1.15rem;
   box-shadow: var(--shadow);
@@ -280,7 +297,11 @@ a:hover {
 .service-panel h2,
 .service-panel p,
 .service-panel a {
-  color: #f6f1e8;
+  color: var(--on-navy);
+}
+
+.service-panel .kicker {
+  color: var(--on-navy-accent);
 }
 
 .service-panel a {
@@ -294,8 +315,8 @@ a:hover {
 }
 
 .time-block {
-  background: rgba(255, 253, 249, 0.08);
-  border: 1px solid rgba(255, 253, 249, 0.18);
+  background: var(--on-navy-wash);
+  border: 1px solid var(--on-navy-line);
   border-radius: 0.9rem;
   padding: 0.85rem 0.95rem;
 }
@@ -310,7 +331,7 @@ a:hover {
 
 .time-block span {
   display: block;
-  color: #efe4d4;
+  color: var(--on-navy-soft);
 }
 
 .address-line {
@@ -379,7 +400,7 @@ a:hover {
 
 .quote {
   margin: 0;
-  background: #f7f1e7;
+  background: var(--surface-muted);
   border: none;
   border-left: 4px solid var(--gold);
   font-family: "Iowan Old Style", Palatino, Georgia, serif;
@@ -400,7 +421,7 @@ a:hover {
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--line);
-  background: #efe4d2;
+  background: var(--bg-deep);
 }
 
 .illustration svg {
@@ -463,7 +484,7 @@ td {
 }
 
 th {
-  background: #f7f1e7;
+  background: var(--surface-muted);
   font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -493,12 +514,12 @@ tr:last-child td {
 .site-footer {
   margin-top: 1rem;
   background: var(--forest);
-  color: #f3ecdf;
+  color: var(--on-navy);
   padding: 2rem 0 1.4rem;
 }
 
 .site-footer a {
-  color: #f3ecdf;
+  color: var(--on-navy);
 }
 
 .footer-grid {
@@ -515,7 +536,7 @@ tr:last-child td {
 .fine {
   margin: 1.2rem 0 0;
   font-size: 0.9rem;
-  color: #e4d8c6;
+  color: var(--on-navy-soft);
 }
 
 caption {
